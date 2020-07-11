@@ -1,0 +1,2394 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    MCMC
+  </title>
+  <!-- Favicon -->
+  <link href="./assets/img/brand/mcmc-logo.png" rel="icon" type="image/png" style="max-width:100%;height:auto;">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+  <!--[if IE]>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <link href="IEStyleSheet.css" rel="stylesheet" />
+        <![endif]-->
+        <!--[if !IE]> -->
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" media="only screen" />
+    <link href="MobileStyleSheet.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px) , only screen and (-webkit-min-device-pixel-ratio: 2) , screen and (-webkit-device-pixel-ratio:1.5)" />
+    <!-- <![endif]-->
+    <!--[if IEMobile]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+          <link href="MobileStyleSheet.css" rel="stylesheet" />
+      <![endif]-->
+      <style>
+        .WebContainer{
+           width: 100%;
+           height: auto;
+       }
+       .articles{
+           width:90%; /*Takes 90% width from WebContainer*/
+           height: auto;
+           margin: auto;
+       }
+       h1.light {
+          font-weight: lighter;
+        }
+        h5.light {
+           font-weight: lighter;
+         }
+      </style>
+</head>
+<body class="">
+  <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+      <a class="navbar-brand pt-0" href="./index.html">
+        <img src="./assets/img/brand/mcmc-logo.png" class="navbar-brand-img" style="max-width:100%;height:auto;" alt="...">
+      </a>
+      <!-- User -->
+      <ul class="nav align-items-center d-md-none">
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="ni ni-bell-55"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="./assets/img/theme/user.png" style="max-width:100%;height:auto;">
+              </span>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+            <div class=" dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Welcome!</h6>
+            </div>
+            <a href="#" class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>My profile</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="ni ni-settings-gear-65"></i>
+              <span>Settings</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="ni ni-calendar-grid-58"></i>
+              <span>Activity</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="ni ni-support-16"></i>
+              <span>Support</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="./examples/login.aspx" class="dropdown-item">
+              <i class="ni ni-user-run"></i>
+              <span>Logout</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-8 collapse-brand">
+              <a href="./index.aspx">
+                <img src="./assets/img/brand/mcmc-logo.png" style="max-width:100%;height:auto;">
+              </a>
+            </div>
+            <div class="col-4 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Form -->
+        <!-- <form class="mt-4 mb-3 d-md-none">
+          <div class="input-group input-group-merge">
+            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form> -->
+        <!-- Navigation -->
+        <ul class="navbar-nav">
+          <li class="nav-item"  class=" active">
+          <a class=" nav-link active " href="./index.aspx?mode=DR"> <i class="ni ni-tv-2 text-primary"></i> Dewan Rakyat
+            </a>
+          </li>
+          <li class="nav-item"  class=" active">
+          <a class=" nav-link active " href=" ./index.aspx?mode=DN"> <i class="ni ni-tv-2 text-primary"></i> Dewan Negara
+            </a>
+          </li>
+          <%--<li class="nav-item"  class=" active">
+          <a class=" nav-link active " href=" ./index.aspx"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <i class="fas fa-file-alt text-green"></i> Report
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <i class="fas fa-history text-teal"></i> History
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <i class="fas fa-file-upload text-orange"></i> Upload
+            </a>
+          </li>--%>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link " href="retail.html">
+              <i class="ni ni-collection text-red"></i> Retail
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="grid.html">
+              <i class="ni ni-chart-bar-32 text-green"></i> Grid
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <i class="ni ni-chart-pie-35 text-blue"></i> Distribution Network
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">
+              <i class="ni ni-briefcase-24 text-yellow"></i> Cooperate Function
+            </a>
+          </li> -->
+
+          <!-- <li class="nav-item">
+            <a class="nav-link " href="./examples/cooperate-function.html">
+              <i class="ni ni-planet text-blue"></i> Icons
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="./examples/maps.html">
+              <i class="ni ni-pin-3 text-orange"></i> Maps
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="./examples/profile.html">
+              <i class="ni ni-single-02 text-yellow"></i> User profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="./examples/tables.html">
+              <i class="ni ni-bullet-list-67 text-red"></i> Tables
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./examples/login.html">
+              <i class="ni ni-key-25 text-info"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./examples/register.html">
+              <i class="ni ni-circle-08 text-pink"></i> Register
+            </a>
+          </li> -->
+        </ul>
+        <!-- Divider -->
+        <hr class="my-3">
+          <ul class="navbar-nav mb-md-3">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="./examples/login.aspx">
+                    <i class="ni ni-user-run"></i> Logout
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-users"></i> User
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="ni ni-ui-04"></i> System Configuration
+                </a>
+            </li> -->
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <!-- <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a> -->
+        <!-- Form -->
+        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+          <div class="form-group mb-0">
+            <%--<div class="input-group">--%>
+              <div class="input-group-prepend">
+                <%--<span class="input-group-text"><i class="fas fa-search"></i></span>--%>
+              </div>
+              <%--<input class="form-control" placeholder="Search" type="text">--%>
+            <%--</div>--%>
+          </div>
+        </form>
+        <!-- User -->
+        <%--<ul class="navbar-nav align-items-center d-none d-md-flex">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <!-- <span class="avatar avatar-sm rounded-circle">
+                  <img alt="Image placeholder" src="./assets/img/theme/user.png">
+                </span> -->
+                <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold"><font color="black">Admin</font></span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+              <div class=" dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+              <a href="#" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>My profile</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="ni ni-settings-gear-65"></i>
+                <span>Settings</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="ni ni-calendar-grid-58"></i>
+                <span>Activity</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="ni ni-support-16"></i>
+                <span>Support</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="./examples/login.html" class="dropdown-item">
+                <i class="ni ni-user-run"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </li>
+        </ul>--%>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Header -->
+    <!-- <div class="header bg-white-primary pb-8 pt-5 pt-md-8" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="header">
+          </div>
+        </div>
+      </div> -->
+      <div class="container-fluid mt--7" style="background-color: #FFFFFF;" >
+        <div class="row mb-5">
+          <div class="cardbox">
+
+              <div class="card-body" style="background-color:  #fefeff;">
+                <br>
+                <br>
+                </div>
+              </div>
+
+
+          </div>
+          </div>
+      <div class="container-fluid mt--7" style="background-color: #FFFFFF;" >
+        <div class="row mb-5">
+          <div class="col-xl-12 mb-5 mb-xl-0">
+              <div class="cardbox">
+                  <div class="card-body" style="background-color:  #fefeff;padding-left: 0px;padding-right: 0px;">
+                    <h1 class="light" align="right" style="letter-spacing: -4.5px;">STATISTIK <b style="font-weight: bold;">DEWAN RAKYAT</b></h1>
+                    <br>
+                    <!-- Card stats -->
+                    <h2 align="left">SESI TERKINI</h2>
+                    <div class="row justify-content-center">
+                      <div class="col-xl-3 col-lg-block-2 mb-4" >
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="cardshadow" style="background-color: #f9c342;">
+                                  <div class="row">
+                                      <div class="col">
+                                        <center><h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">JUMLAH SOALAN &nbsp<img src="./assets/img/brand/paper.png" width="40" height="40"></h5></center>
+                                        <br>
+                                        <b><h1 id="main_jumlah_soalan"><font size="20rem"><b style="font-weight: bold;">-</b></font></h1><br></b>
+                                        <center><h5 class="card-title text-uppercase text-muted mb-0" id="main_tahun_sesi">-</h5></center>
+                                        <p class="mt-1 mb-0 text-muted text-xs">
+                                        <font size="5"><span id="main_jumlah_soalan_percentage_change_negative_new" class="text-danger mr-2"><i class="fas fa-arrow-down"></i> <span id="main_jumlah_soalan_percentage_change_new"> - % </span></span></font>
+                                                            <font size="5"><span id="main_jumlah_soalan_percentage_change_positive_new" class="text-danger mr-2"><i class="fas fa-arrow-up"></i> <span id="main_jumlah_soalan_percentage_change_new"> - % </span></span></font>
+                    										<div style="white-space:"><span class="inline-container text-xs" id="main_jumlah_soalan_percentage_change_negative_sentence_new" title style="font-size: 75%; line-height: 16px; display:block">-</span></div>
+                                        <div style="white-space:"><span class="inline-container text-xs" id="main_jumlah_soalan_percentage_change_positive_sentence_new" title style="font-size: 75%; line-height: 16px; display:block">-</span></div>
+                                      </div>
+                                      <!-- <div class="col mt-3">
+                                          <h2 id="main_tahun_sesi">-</h2>
+                                      </div> -->
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-block-2 mb-4" >
+                               <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                                   <div class="cardshadow" style="background-color: #e9ecef;">
+                                       <div class="row">
+                                           <div class="col">
+                                               <p class="mt-1 mb-0 text-muted text-xs">
+                                                 <h5 class="light" align="left"  class="card-title text-uppercase text-muted mb-0 float-left">PARTI AKTIF</h5>
+                                                 <br><br>
+                                              <div class="row align-items-center d-flex justify-content-center">
+                                                <div class="row justify-content-center">
+                                                    <b style="font-weight: bold;"><span class="h1 font-weight-bold mb-0"  id="main_parti_aktif">-</span></b>
+                                                </div>
+                                              </div>
+                                          </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                      <div class="col-xl-3 col-lg-6 mb-2">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:44%">
+                              <div class="cardshadow" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">SOALAN JAWAB LISAN</h5>
+                                          <b style="font-weight: bold;"><span class="h1 font-weight-bold mb-0" id="main_jumlah_soalan_lisan" >-</span></b>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><br>
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:44%">
+                              <div class="cardshadow" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">MQT</h5>
+                                          <b style="font-weight: bold;"><span class="h1 font-weight-bold mb-0" id="main_jumlah_soalan_mqt">-</span></b>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-6 mb-2">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:44%">
+                              <div class="cardshadow" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">SOALAN BUKAN LISAN</h5>
+                                          <b style="font-weight: bold;"><span class="h1 font-weight-bold mb-0" id="main_jumlah_soalan_bukan_lisan">-</span></b>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><br>
+                          <div class="card card-stats mb-5 mb-xl-2" style="height:44%">
+                              <div class="cardshadow" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">SOALAN KAMAR KHAS</h5>
+                                          <b style="font-weight: bold;"><span class="h1 font-weight-bold mb-0" id="main_jumlah_soalan_ukk">-</span></b>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <div class="container-fluid mt--7" style="background-color: #FFFFFF;" >
+      <div class="row mb-5">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+            <div class="cardbox">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-left">
+                        <div class="col">
+                            <!-- <h3 class="mb-0">History</h3> -->
+                            <h2 align="left" class="text-black mb-0">PECAHAN ISU</h2>
+                        </div>
+                        <!-- <div class="col text-right">
+                            <a href="#!" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Print</a>
+                            <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                        </div> -->
+                        <div class="col">
+                            <ul class="nav nav-pills justify-content-end">
+                                <li id="main_lisan_button" class="nav-item mr-2 mr-md-0">
+                                    <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab" style="background-color:#747f8a">
+                                        <span style="colour:#e6e6e6">LISAN</span>
+                                    </a>
+                                </li>
+                                <li id="main_bukan_lisan_button" class="nav-item mr-2 mr-md-0">
+                                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab" style="background-color:#747f8a">
+                                        <span style="colour:#e6e6e6">BUKAN LISAN</span>
+                                    </a>
+                                </li>
+                                <li id="main_mqt_button" class="nav-item mr-2 mr-md-0">
+                                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab" style="background-color:#747f8a">
+                                        <span style="colour:#e6e6e6">MQT</span>
+                                    </a>
+                                </li>
+                                <li id="main_kamar_khas_button" class="nav-item mr-2 mr-md-0">
+                                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab" style="background-color:#747f8a">
+                                        <span style="colour:#e6e6e6">KAMAR KHAS</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <canvas  style="height: 20rem" id="jenis-soalan" class="chart-canvas chartjs-render-monitor"  style="background-color: #fefeff;" style="max-width:100%;height:auto;"></canvas>
+            </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+            <div class="cardbox">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-left">
+                        <div class="col">
+                            <h2 align="left" class="text-black mb-0">REKOD SESI LALU</h2>
+                        </div>
+                        <asp:Repeater id="RepeaterTahunSesi" runat="server">
+                          <HeaderTemplate>
+                              <select id="past_tahun_sesi_select" class="col-xl-4 col-lg-6 mb-2 selectpicker" title="Sesi persidangan">
+                          </HeaderTemplate>
+
+                          <ItemTemplate>
+                              <option value="<%# DataBinder.Eval(Container.DataItem, "tahun") %>_<%# DataBinder.Eval(Container.DataItem, "sesi") %>">Sesi <%# DataBinder.Eval(Container.DataItem, "sesi") %> <%# DataBinder.Eval(Container.DataItem, "tahun") %></option>
+                          </ItemTemplate>
+
+                          <FooterTemplate>
+                             </select>
+                          </FooterTemplate>
+
+                       </asp:Repeater>
+                    </div>
+                </div>
+                <div class="card-body" style="background-color:  #fefeff;">
+                    <!-- Chart -->
+
+                    <div class="row justify-content-center">
+                      <div class="col-xl-3 col-lg-block-6 mb-4" >
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%" >
+                              <div class="cardshadow" style="background-color: #f9c342;">
+                                  <div class="row">
+                                      <div class="col">
+                                        <center><h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">JUMLAH SOALAN &nbsp<img src="./assets/img/brand/paper.png" width="40" height="40"></h5></center>
+                                        <h1 id="past_jumlah_soalan"><font size="20rem"><b>-</b></font></h1><br>
+                                        <p class="mt-1 mb-0 text-muted text-xs">
+                                        <font size="5"><span id="main_jumlah_soalan_percentage_change_negative" class="text-danger mr-2"><i class="fas fa-arrow-down"></i> <span id="main_jumlah_soalan_percentage_change"> - % </span></span></font>
+                                                            <font size="5"><span id="main_jumlah_soalan_percentage_change_positive" class="text-danger mr-2"><i class="fas fa-arrow-up"></i> <span id="main_jumlah_soalan_percentage_change"> - % </span></span></font>
+                    										<!-- <div style="white-space:"><span class="inline-container text-xs" title style="font-size: 75%; line-height: 16px; display:block">Penurunan jumlah soalan berbanding sesi sebelumnya </span></div> -->
+                                        <div style="white-space:"><span class="inline-container text-xs" id="main_jumlah_soalan_percentage_change_negative_sentence" title style="font-size: 75%; line-height: 16px; display:block">-</span></div>
+                                        <div style="white-space:"><span class="inline-container text-xs" id="main_jumlah_soalan_percentage_change_positive_sentence" title style="font-size: 75%; line-height: 16px; display:block">-</span></div>
+                                      </div>
+                                      <!-- <div class="col mt-3">
+                                          <h2 id="main_tahun_sesi">-</h2>
+                                      </div> -->
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- <div class="col-xl-3 col-lg-6 mb-2">
+                        <div class="card card-stats mb-4 mb-xl-0" style="height:46%">
+                            <div class="card-body" style="background-color: #e9ecef;">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">Soalan Jawab Lisan</h5>
+                                        <span class="h1 font-weight-bold mb-0" id="past_jumlah_soalan_lisan" ><b>-</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="card card-stats mb-4 mb-xl-0" style="height:45.5%">
+                            <div class="card-body" style="background-color: #e9ecef;">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 align="left" class="card-title text-uppercase text-muted mb-0">Soalan Bukan Lisan</h5>
+                                        <span class="h1 font-weight-bold mb-0" id="past_jumlah_soalan_bukan_lisan"><b>-</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div> -->
+
+                      <!-- <div class="col-xl-2 col-lg-6 mb-2">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="card-body" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h4 class="card-title text-uppercase text-muted mb-0">AHLI PARLIMEN</h4>
+                                          <br>
+                                          <span class="h5 font-weight-bold mb-0" id="past_ahli_aktif">-</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+<!--
+                      <div class="col-xl-3 col-lg-6 mb-2">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="card-body" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h4 align="right" class="card-title text-uppercase text-muted mb-0">AHLI PARLIMEN</h4>
+                                          <br>
+                                          <span class="h4 font-weight-bold mb-0" id="past_ahli_aktif"><b>-</b></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+
+                      <div class="col-xl-3 col-lg-block-6 mb-4">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="cardshadow " style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">PARTI AKTIF</h4>
+                                          <br>
+                                          <span class="h1 font-weight-bold mb-0" id="past_parti_aktif"><b>-</b></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-xl-3 col-lg-block-6 mb-4">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="cardshadow" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">PARLIMEN PALING AKTIF</h5>
+                                          <br>
+                                          <a class="h4 font-weight-bold mb-0" id="past_parlimen_aktif">-</a>
+                                          <!-- <a id="past_parliment_link">test<span class="h4 font-weight-bold mb-0" id="past_parlimen_aktif">-</span></a> -->
+                                      </div>
+                                  </div>
+                                  <p class="mt-3 mb-0 text-muted text-sm">
+                                      <span class="text-nowrap">Bil Soalan</span>
+                                      <span id="past_bil_soalan" class="text-danger mr-2"><b>-</b></span>
+                                  </p>
+                                  <p class="mt-3 mb-0 text-muted text-sm">
+                                      <span class="text-nowrap">Bil Parlimen</span>
+                                      <span id="past_bil_parlimen" class="text-danger mr-2"><b>-</b></span>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-xl-3 col-lg-block-6 mb-4">
+                        <div class="card card-stats mb0 mb-xl1" style="height:46.5%">
+                            <div class="cardshadow" style="background-color: #e9ecef;">
+                                <div class="row">
+                                    <div class="col" style="margin-bottom:5px">
+                                        <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">SOALAN JAWAB LISAN</h5>
+                                        <span class="h1 font-weight-bold mb-0" id="past_jumlah_soalan_lisan" ><b>-</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row hidden-md-up mt-4"></div>
+                        <div class="card card-stats mb-3 mb-xl0" style="height:46.5%">
+                            <div class="cardshadow" style="background-color: #e9ecef;">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="light" align="left" class="card-title text-uppercase text-muted mb-0">SOALAN BUKAN LISAN</h5>
+                                        <span class="h1 font-weight-bold mb-0" id="past_jumlah_soalan_bukan_lisan"><b>-</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <!-- <div class="col-xl-3 col-lg-6 mb-2">
+                          <div class="card card-stats mb-4 mb-xl-0" style="height:100%">
+                              <div class="card-body" style="background-color: #e9ecef;">
+                                  <div class="row">
+                                      <div class="col">
+                                          <h4 align="left" class="card-title text-uppercase text-muted mb-0">PARTI AKTIF</h4>
+                                          <br>
+                                          <span class="h1 font-weight-bold mb-0" id="past_parti_aktif"><b>-</b></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+
+                      <!-- <div class="col-xl-2 col-lg-6 mb-2" >
+                               <div class="card card-stats mb-4 mb-xl-0" style="height:325px">
+                                   <div class="card-body" style="background-color: #e9ecef;">
+                                       <div class="row">
+                                           <div class="col" style="height:240px" >
+                                <p class="mt-1 mb-0 text-muted text-xs">
+                                  <h4 class="card-title text-uppercase text-muted mb-0">Parti Aktif</h4>
+
+                                <p><span id="past_parti_aktif" class="h1 font-weight-bold mb-0">-</span></p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div> -->
+                    </div>
+                    <div class="row mb-5">
+                        <!-- <div class="col-xl-2 col-lg-block-2 mb-4" >
+                            <div class="card" style="height:325px">
+                                <div class="card-body" style="background-color: #f9c342;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Soalan &nbsp<img src="./assets/img/brand/paper.png" width="40" height="40"></h5>
+                                            <br>
+                                            <h1 id="past_jumlah_soalan"><font size="20rem"><b>-</b></font></h1>
+                                            <p class="mt-1 mb-0 text-muted text-xs">
+                                            <font size="5"><span id="main_jumlah_soalan_percentage_change_negative" class="text-danger mr-2"><i class="fas fa-arrow-down"></i> <span id="main_jumlah_soalan_percentage_change"> - % </span></span></font>
+                                                                <font size="5"><span id="main_jumlah_soalan_percentage_change_positive" class="text-success mr-2"><i class="fas fa-arrow-up"></i> <span id="main_jumlah_soalan_percentage_change"> - % </span></span></font>
+                        										<div style="white-space:"><span class="inline-container text-xs" title>Penurunan jumlah soalan berbanding sesi sebelumnya </span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 mb-2">
+                            <div class="card card-stats mb-4 mb-xl-0" style="height:150px">
+                                <div class="card-body" style="background-color: #e9ecef;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title text-uppercase text-muted mb-0">Soalan Jawab Lisan</h4>
+                                            <br>
+                                            <span id="past_jumlah_soalan_lisan" class="h1 font-weight-bold mb-0">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+
+                                <div class="card card-stats mb-4 mb-xl-0" style="height:150px">
+                                    <div class="card-body" style="background-color: #e9ecef;">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="card-title text-uppercase text-muted mb-0">Soalan Bukan Lisan</h4>
+                                                <br>
+                                                <span id="past_jumlah_soalan_bukan_lisan" class="h1 font-weight-bold mb-0">7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 mb-2">
+                            <div class="card card-stats mb-4 mb-xl-0" style="height:325px">
+                                <div class="card-body" style="background-color: #e9ecef;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title text-uppercase text-muted mb-0">PARLIMEN PALING AKTIF</h4>
+                                            <br>
+                                            <span class="h1 font-weight-bold mb-0" id="past_parlimen_aktif">-</span>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-nowrap">Bil Soalan</span>
+                                        <span id="past_bil_soalan" class="text-danger mr-2">-</span>
+                                    </p>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-nowrap">Bil Parlimen</span>
+                                        <span id="past_bil_parlimen" class="text-danger mr-2">-</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-6 mb-2">
+                            <div class="card card-stats mb-4 mb-xl-0" style="height:325px">
+                                <div class="card-body" style="background-color: #e9ecef;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title text-uppercase text-muted mb-0">AHLI PARLIMEN</h4>
+                                            <br>
+                                            <span class="h5 font-weight-bold mb-0" id="past_ahli_aktif">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 mb-2">
+                            <div class="card card-stats mb-4 mb-xl-0" style="height:325px">
+                                <div class="card-body" style="background-color: #e9ecef;">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4 class="card-title text-uppercase text-muted mb-0">PARTI AKTIF</h4>
+                                            <br>
+                                            <span class="h1 font-weight-bold mb-0" id="past_parti_aktif">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-6 mb-2" >
+                                 <div class="card card-stats mb-4 mb-xl-0" style="height:325px">
+                                     <div class="card-body" style="background-color: #e9ecef;">
+                                         <div class="row">
+                                             <div class="col" style="height:240px" >
+                 									<p class="mt-1 mb-0 text-muted text-xs">
+                 										<h4 class="card-title text-uppercase text-muted mb-0">Parti Aktif</h4>
+
+                 									<p><span id="past_parti_aktif" class="h1 font-weight-bold mb-0">-</span></p>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+            <div class="cardbox">
+                <div class="card-header bg-transparent">
+                  <div class="row align-items-left">
+                        <div class="col">
+                            <h2 align="left" class="text-black mb-0">REKOD SOALAN</h2>
+                        </div>
+                        <select id="parti_select" class="col-xl-4 col-lg-6 mb-2 selectpicker"  title="PARTI">
+                            <!-- <option>AMANAH</option>
+                            <option>DAP</option>
+                            <option>MCA</option>
+                            <option>MIC</option> -->
+                        </select>
+                        <select id="negeri_select" class="col-xl-4 col-lg-6 mb-2 selectpicker"  title="NEGERI">
+                            <!-- <option>JOHOR</option>
+                            <option>KEDAH</option>
+                            <option>KELANTAN</option>
+                            <option>KUALA LUMPUR</option> -->
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <canvas id="graph2" style="height:15rem" style="background-color:  #fefeff; max-width:100%; height:auto;"></canvas>
+                <h5 align="left">Nota: Sesi ke-3 2019 melihatkan peningkatan pada isu salahguna media sosial berbanding sesi-sesi sebelumnya. Ini dilihat berkait rapat dengan polisi-polisi terkini kerajaan dan isu-isu semasa. Namun isu-isu lain yang berkaitan Perkhidmatan
+                Internet seperti infrastruktur dan servis masih mendapat perhatian daripada kalangan ahli-ahli Parlimen. Antara topik lain yang menjadi isu perbahasan ialah PELAN NFCP dan juga 5G negara yang menjadi keutamaan Kementerian
+                Komunikasi dan Multimedia: KKMM</h5>
+            </div>
+        </div>
+      </div>
+
+    <h2 align="left">STATISTIK ISU MENGIKUT NEGERI</h2>
+    <div id="negeri_panel">
+          <div class="row mb-5" id="negeri_panel_row"></div>
+    </div>
+
+    <div class="row mb-5" >
+      <div class="col-xl-12 mb-5 mb-xl-0">
+          <div class="cardbox">
+              <div class="card-header bg-transparent">
+                  <div class="row align-items-left">
+                      <div class="col">
+                          <h2 align="left" class="text-black mb-0">TRAJEKTORI ISU</h2>
+                      </div>
+
+                  </div>
+
+              </div>
+              <br>
+              <canvas style="height: 30rem"  id="line" style="background-color:  #fefeff;"></canvas>
+              <h6 align="left">Nota: Tafsiran trajektori ini tidak mengambil kira keadaan dan isu semasa. Ia hanya berdasarkan kecendurangan dan kepentingan isu terkini. Selain itu klasifikasi sub isu juga berkemungkinan bersilang diantara satu sama lain.</h6>
+          </div>
+      </div>
+    </div>
+    <!-- end of LUKE -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-6">
+            <div class="copyright text-center text-xl-left text-muted">
+              &copy; 2020 MCMC
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+              <li class="nav-item">
+                <a href="http://pintarparlimen.mcmc.gov.my/about.aspx" class="nav-link" target="_blank">About Us</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="#" class="nav-link" target="_blank">MCMC</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" target="_blank">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" target="_blank">MIT License</a>
+              </li>-->
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!--   Core   -->
+  <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!--   Optional JS   -->
+  <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+  <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+  <!--   Argon JS   -->
+  <!-- <script src="./assets/js/argon-dashboard.min.js?v=1.1.0"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script> -->
+
+  <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+  <!-- <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script> -->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"> -->
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+
+  <!-- Artanis - Nickson -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "argon-dashboard-free"
+      });
+  </script>
+  <script>
+    document.addEventListener('mouseover', function(event) {
+    var target = event.target;
+    // Check support for matches() at <http://caniuse.com/#feat=matchesselector>
+    if (!target.matches('[title]')) return;
+
+    var container = target.className === 'block-container' ? target : target.parentNode;
+    var title = target.title || target.getAttribute('data-title') || target.textContent;
+    var overflowed = container.scrollWidth > container.clientWidth;
+
+    target.title = overflowed ? title : '';
+    });
+
+    document.addEventListener('mouseout', function(event) {
+    var target = event.target;
+    // Check support for matches() at <http://caniuse.com/#feat=matchesselector>
+    if (!target.matches('[title]')) return;
+    // 'mouseout' event fires even when move from parent to child element
+    if (event.relatedTarget.parentNode === target) return;
+
+    target.title = '';
+    });
+  </script>
+
+<script>
+
+ $(function () {
+
+    var tahun_sesi = JSON.parse("<%=json_tahun_sesi %>");
+     console.log('tahun_sesi', tahun_sesi)
+
+     var tahun_sesi_jenis_count = JSON.parse("<%=json_tahun_sesi_jenis_count %>");
+     console.log('tahun_sesi_jenis_count', tahun_sesi_jenis_count)
+
+    var latest_tahun_sesi = tahun_sesi[0]['tahun'] + '_' + tahun_sesi[0]['sesi']
+    var second_latest_tahun_sesi = tahun_sesi[1]['tahun'] + '_' + tahun_sesi[1]['sesi']
+
+    //$('#main_tahun_sesi').text('Sesi ' + tahun_sesi[0]['sesi'] + ' - ' + tahun_sesi[0]['tahun']);
+
+    console.log('latest_tahun_sesi', latest_tahun_sesi)
+    console.log('second_latest_tahun_sesi', second_latest_tahun_sesi)
+
+    console.log('tahun_sesi_jenis_count', tahun_sesi_jenis_count)
+
+    var jenis_count_by_tahun_sesi = _.groupBy(tahun_sesi_jenis_count, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+    });
+    console.log('jenis_count_by_tahun_sesi', jenis_count_by_tahun_sesi)
+
+    latest_jenis_count = jenis_count_by_tahun_sesi[latest_tahun_sesi]
+    second_latest_jenis_count = jenis_count_by_tahun_sesi[second_latest_tahun_sesi]
+
+    console.log('latest_jenis_count', latest_jenis_count)
+    console.log('second_latest_jenis_count', second_latest_jenis_count)
+
+    var latest_jumlah_soalan = _.sumBy(latest_jenis_count, function (o) { return Number(o['count']) })
+    console.log('latest_jumlah_soalan', latest_jumlah_soalan)
+
+
+    var tahun_sesi_parti_count = JSON.parse("<%=json_tahun_sesi_parti_count %>");
+     console.log('tahun_sesi_parti_count', tahun_sesi_parti_count)
+
+    var parti_count_by_tahun_sesi = _.groupBy(tahun_sesi_parti_count, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+     });
+
+     var latest_parti_count = parti_count_by_tahun_sesi[latest_tahun_sesi]
+
+     console.log('latest_parti_count', latest_parti_count)
+
+     var max_parti_count_value = _.maxBy(latest_parti_count, 'count')['count'];
+
+     console.log('max_parti_count_value', max_parti_count_value)
+     var max_latest_parti_count = _.filter(latest_parti_count, { 'count': max_parti_count_value })
+
+     console.log('max_latest_parti_count', max_latest_parti_count)
+
+     var max_latest_parti_array = _.map(max_latest_parti_count, 'partiname')
+     console.log('max_latest_parti_array', max_latest_parti_array)
+
+
+    //$('#main_jumlah_soalan').text(latest_jumlah_soalan);
+    //$('#main_jumlah_soalan_lisan').text( _.find(latest_jenis_count, { 'jenis': 'Lisan' })['count']);
+    //$('#main_jumlah_soalan_bukan_lisan').text( _.find(latest_jenis_count, { 'jenis': 'Bukan Lisan' })['count']);
+     //$('#main_jumlah_soalan_mqt').text((_.find(latest_jenis_count, { 'jenis': 'MQT' }) || {} )['count']);
+     //$('#main_jumlah_soalan_ukk').text((_.find(latest_jenis_count, { 'jenis': 'Usul Kamar Khas' }) || {})['count']);
+    //$('#main_parti_aktif').html(  max_latest_parti_array.join('<br/>') );
+    //$('#main_jumlah_soalan').text("heheah");
+
+    var second_latest_jumlah_soalan = _.sumBy(second_latest_jenis_count, function (o) { return Number(o['count']) })
+
+    console.log('second_latest_jumlah_soalan', second_latest_jumlah_soalan)
+
+    var percentage_change = (latest_jumlah_soalan - second_latest_jumlah_soalan)/second_latest_jumlah_soalan * 100
+
+    if (percentage_change < 0) {
+        $('#main_jumlah_soalan_percentage_change_positive').remove()
+        $('#main_jumlah_soalan_percentage_change_positive_sentence').remove()
+        $('#main_jumlah_soalan_percentage_change_negative_sentence').text('Penurunan jumlah soalan berbanding sesi sebelumnya');
+    } else {
+        $('#main_jumlah_soalan_percentage_change_negative').remove()
+        $('#main_jumlah_soalan_percentage_change_negative_sentence').remove()
+        $('#main_jumlah_soalan_percentage_change_positive_sentence').text('Kenaikan jumlah soalan berbanding sesi sebelumnya');
+    }
+
+    $('#main_jumlah_soalan_percentage_change').text(percentage_change.toFixed(2) + '%');
+
+     //////
+
+    var tahun_sesi_jenis_isu_count = JSON.parse("<%=json_tahun_sesi_jenis_isu_count %>");
+
+    var jenis_isu_count_by_tahun_sesi = _.groupBy(tahun_sesi_jenis_isu_count, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+    });
+     console.log('jenis_isu_count_by_tahun_sesi', jenis_isu_count_by_tahun_sesi)
+
+     isu_count_by_tahun_sesi_by_jenis = {};
+
+     for (const tahun_sesi in jenis_isu_count_by_tahun_sesi) {
+         var jenis_isu_count = jenis_isu_count_by_tahun_sesi[tahun_sesi]
+
+        isu_count_by_tahun_sesi_by_jenis[tahun_sesi] = _.groupBy(jenis_isu_count, function (row) {
+            return row['jenis']
+        });
+     }
+
+
+     console.log('isu_count_by_tahun_sesi_by_jenis', isu_count_by_tahun_sesi_by_jenis)
+
+     latest_isu_count_by_jenis = isu_count_by_tahun_sesi_by_jenis[latest_tahun_sesi]
+
+     console.log('latest_isu_count_by_jenis', latest_isu_count_by_jenis)
+
+
+    /*by Luke-2/3/2020*/
+    var tahun_sesi_new = JSON.parse("<%=json_tahun_sesi_question%>");
+    // if(Array.isArray(tahun_sesi_new) && tahun_sesi_new.length === 0)
+    // {
+    //
+    // }
+    console.log('tahun_sesi_new', tahun_sesi_new)
+
+    var tahun_sesi_jenis_count_new = JSON.parse("<%=json_tahun_sesi_jenis_count_question %>");
+    console.log('tahun_sesi_jenis_count_question', tahun_sesi_jenis_count_new)
+
+    var latest_jumlah_soalan_new = _.sumBy(tahun_sesi_jenis_count_new, function (o) { return Number(o['count']) })
+    console.log('latest_jumlah_soalan_new', latest_jumlah_soalan_new)
+
+     var latest_tahun_sesi_new = tahun_sesi_new[0]['tahun'] + '_' + tahun_sesi_new[0]['sesi']
+     if (tahun_sesi_new.length == 1) {
+         var second_latest_tahun_sesi_new = null
+         second_latest_jenis_count_new = 0
+     }
+     else {
+         var second_latest_tahun_sesi_new = tahun_sesi_new[1]['tahun'] + '_' + tahun_sesi_new[1]['sesi']
+         second_latest_jenis_count_new = jenis_count_by_tahun_sesi[second_latest_tahun_sesi_new]
+     }
+
+    $('#main_tahun_sesi').text('Sesi ' + tahun_sesi_new[0]['sesi'] + ' - ' + tahun_sesi_new[0]['tahun']);
+
+    console.log('latest_tahun_sesi_new', latest_tahun_sesi_new)
+    //console.log('second_latest_tahun_sesi_new', second_latest_tahun_sesi_new)
+
+    //console.log('tahun_sesi_jenis_count_new', tahun_sesi_jenis_count_new)
+
+    var jenis_count_by_tahun_sesi_new = _.groupBy(tahun_sesi_jenis_count_new, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+    });
+    console.log('jenis_count_by_tahun_sesi_new', jenis_count_by_tahun_sesi_new)
+
+     latest_jenis_count_new = jenis_count_by_tahun_sesi_new[latest_tahun_sesi_new]
+
+    console.log('latest_jenis_count_new', latest_jenis_count_new)
+    console.log('second_latest_jenis_count_new', second_latest_jenis_count_new)
+
+    var latest_jumlah_soalan_new = _.sumBy(latest_jenis_count_new, function (o) { return Number(o['count']) })
+    console.log('latest_jumlah_soalan_new', latest_jumlah_soalan_new)
+
+    var tahun_sesi_parti_count_new = JSON.parse("<%=json_tahun_sesi_parti_count_question %>");
+    console.log('tahun_sesi_parti_count_new', tahun_sesi_parti_count_new)
+
+    var parti_count_by_tahun_sesi_new = _.groupBy(tahun_sesi_parti_count_new, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+        });
+
+    var latest_parti_count_new = parti_count_by_tahun_sesi_new[latest_tahun_sesi_new]
+
+    console.log('latest_parti_count_new', latest_parti_count_new)
+
+    var max_parti_count_value_new = _.maxBy(latest_parti_count_new, 'count')['count'];
+
+    console.log('max_parti_count_value_new', max_parti_count_value_new)
+    var max_latest_parti_count_new = _.filter(latest_parti_count_new, { 'count': max_parti_count_value_new })
+
+    console.log('max_latest_parti_count_new', max_latest_parti_count_new)
+
+    var max_latest_parti_array_new = _.map(max_latest_parti_count_new, 'partiname')
+     console.log('max_latest_parti_array_new', max_latest_parti_array_new)
+
+
+    $('#main_jumlah_soalan').text(latest_jumlah_soalan_new);
+    $('#main_jumlah_soalan_lisan').text( _.find(latest_jenis_count_new, { 'jenis': 'Lisan' })['count']);
+    $('#main_jumlah_soalan_bukan_lisan').text( _.find(latest_jenis_count_new, { 'jenis': 'Bukan Lisan' })['count']);
+    $('#main_jumlah_soalan_mqt').text((_.find(latest_jenis_count_new, { 'jenis': 'MQT' }) || {} )['count']);
+    $('#main_jumlah_soalan_ukk').text((_.find(latest_jenis_count_new, { 'jenis': 'Usul Kamar Khas' }) || {})['count']);
+    $('#main_parti_aktif').html(  max_latest_parti_array_new.join('<br/>') );
+
+
+    var second_latest_jumlah_soalan_new = _.sumBy(second_latest_jenis_count_new, function (o) { return Number(o['count']) })
+
+    console.log('second_latest_jumlah_soalan_new', second_latest_jumlah_soalan_new)
+     if (second_latest_jumlah_soalan_new == 0) {
+         var division = 1;
+     }
+     else {
+         var division = second_latest_jumlah_soalan_new;
+     }
+    var percentage_change = (latest_jumlah_soalan_new - second_latest_jumlah_soalan_new)/division * 100
+
+    // if (percentage_change < 0) {
+    //     $('#main_jumlah_soalan_percentage_change_positive').remove()
+    // } else {
+    //     $('#main_jumlah_soalan_percentage_change_negative').remove()
+    // }
+
+    if (percentage_change < 0) {
+        $('#main_jumlah_soalan_percentage_change_positive_new').remove()
+        $('#main_jumlah_soalan_percentage_change_positive_sentence_new').remove()
+        $('#main_jumlah_soalan_percentage_change_negative_sentenc_new').text('Penurunan jumlah soalan berbanding sesi sebelumnya');
+    } else {
+        $('#main_jumlah_soalan_percentage_change_negative_new').remove()
+        $('#main_jumlah_soalan_percentage_change_negative_sentence_new').remove()
+        $('#main_jumlah_soalan_percentage_change_positive_sentence_new').text('Kenaikan jumlah soalan berbanding sesi sebelumnya');
+    }
+
+     $('#main_jumlah_soalan_percentage_change_new').text(percentage_change.toFixed(2) + '%');
+
+     var tahun_sesi_jenis_isu_count_new = JSON.parse("<%=json_tahun_sesi_jenis_isu_count_question %>");
+     console.log('tahun_sesi_jenis_isu_count_new', tahun_sesi_jenis_isu_count_new)
+
+    var jenis_isu_count_by_tahun_sesi_new = _.groupBy(tahun_sesi_jenis_isu_count_new, function (row) {
+        return row['tahun'] + '_' + row['sesi']
+    });
+     console.log('jenis_isu_count_by_tahun_sesi_new', jenis_isu_count_by_tahun_sesi_new)
+
+     isu_count_by_tahun_sesi_by_jenis_new = {};
+
+     for (const tahun_sesi in jenis_isu_count_by_tahun_sesi_new) {
+         var jenis_isu_count_new = jenis_isu_count_by_tahun_sesi_new[tahun_sesi]
+
+        isu_count_by_tahun_sesi_by_jenis_new[tahun_sesi] = _.groupBy(jenis_isu_count_new, function (row) {
+            return row['jenis']
+        });
+     }
+
+
+     console.log('isu_count_by_tahun_sesi_by_jenis', isu_count_by_tahun_sesi_by_jenis_new)
+
+     latest_isu_count_by_jenis_new = isu_count_by_tahun_sesi_by_jenis_new[latest_tahun_sesi_new]
+
+     console.log('latest_isu_count_by_jenis_new', latest_isu_count_by_jenis_new)
+
+    /*by END Luke-2/3/2020*/
+
+    /*
+    var tahun_sesi_isu_count_by_jenis = _.groupBy(tahun_sesi_jenis_isu_count, function (row) {
+        return row['jenis']
+    });
+     console.log('tahun_sesi_isu_count_by_jenis', tahun_sesi_isu_count_by_jenis)*/
+
+
+     var isu_array = JSON.parse("<%=json_isu %>");
+
+     isu_array.forEach(function (isu) {
+         isuname = isu['isuname']
+     })
+
+     //////
+
+    Chart.defaults.global.defaultFontColor = '#8495a7';
+    var option = {
+        // maintainAspectRatio: false,
+        aspectRatio: 4,
+        responsive: true,
+        maintainAspectRatio: true,
+        legend: {
+            display: true,
+            position : 'bottom',
+            labels: {
+              boxWidth: 0
+          },
+        },
+        // tooltips: {
+        //     callbacks: {
+        //         label: tooltipItem => `${tooltipItem.yLabel}: ${tooltipItem.xLabel} Soalan`,
+        //         title: () => null,
+        //     }
+        // },
+        scales: {
+            yAxes: [{
+            stacked: true,
+            gridLines: {
+                display: true,
+                color: "rgba(255,99,132,0.0)"
+            },
+            ticks: {
+                        beginAtZero: true
+                    }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    beginAtZero: true,
+                    min: 0,
+                    stepSize: 1,
+                }
+            }]
+        },
+        layout: {
+            padding: {
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20
+            }
+        }
+     };
+
+     function getChartDataByJenis(jenis) {
+        var data = {
+            datasets: [{
+                label: 'Jumlah Soalan',
+                data: [3, 0, 2, 0, 0, 1],
+                backgroundColor: [
+                    'rgba(255, 99, 132)',
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 206, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(153, 102, 255)',
+                    'rgba(255, 159, 64)',
+                    'rgba(166, 99, 132)',
+                    'rgba(154, 162, 235)',
+                    'rgba(234, 206, 86)',
+                    'rgba(75, 100, 192)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(166, 99, 132)',
+                    'rgba(154, 162, 235)',
+                    'rgba(234, 206, 86)',
+                    'rgba(75, 100, 192)'
+                ],
+                borderWidth: 1
+            }]
+         };
+
+         data.labels = [];
+         data.datasets[0].data = [];
+
+         //data.labels.push('Grand Total');
+         //data.datasets[0].data.push(99);
+         //data.datasets[0].data.push(_.sumBy(latest_isu_count_by_jenis[jenis], function (o) { return Number(o['count']) }));
+         //data.datasets[0].data.push(_.sumBy(latest_isu_count_by_jenis[jenis], 'count'));
+
+         data.labels = (data.labels).concat( _.map(latest_isu_count_by_jenis_new[jenis], 'isuname'));
+         data.datasets[0].data = (data.datasets[0].data).concat(_.map(latest_isu_count_by_jenis_new[jenis], 'count'));
+
+         console.log( data )
+         return data
+     }
+
+
+    var ctx = document.getElementById('jenis-soalan');
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: getChartDataByJenis('Lisan'),
+        options: option,
+    });
+
+    $("#main_lisan_button").on("click", function(event){
+        myChart.config.data = getChartDataByJenis('Lisan');
+        myChart.update();
+     });
+
+    $("#main_bukan_lisan_button").on("click", function(event){
+        myChart.config.data =  getChartDataByJenis('Bukan Lisan');
+        myChart.update();
+    });
+
+    $("#main_mqt_button").on("click", function(event){
+        myChart.config.data =  getChartDataByJenis('MQT');
+        myChart.update();
+    });
+
+    $("#main_kamar_khas_button").on("click", function(event){
+        myChart.config.data =  getChartDataByJenis('Usul Kamar Khas');
+        myChart.update();
+     });
+
+     //////
+
+     var tahun_sesi_ahli_parlimen_count = null
+     var mode = null
+
+     if (!mode) {
+         try {
+             tahun_sesi_ahli_parlimen_count = JSON.parse("<%=json_tahun_sesi_ahli_parlimen_count %>");
+             mode = 'DR'
+             $('#parlimen_or_negeri_aktif_text').text('Parlimen Aktif')
+             $('#ahli_or_ahlisenat_aktif_text').text('Ahli Parlimen')
+         } catch (e) {
+             console.warn('json_tahun_sesi_ahli_parlimen_count is empty')
+         }
+     }
+
+     if (!mode) {
+
+         try {
+             var dirty_json_str = "<%=json_tahun_sesi_ahlisenat_parlimen_count %>"
+             //var clean_json_str = dirty_json_str.replace(/[\u{0080}-\u{FFFF}]/gu, ""); //ref: https://stackoverflow.com/a/44472084
+             //var clean_json_str = dirty_json_str.replace('\t','');
+             var clean_json_str = dirty_json_str.replace(/[\x09]/g,'');
+             console.log('clean_json_str', clean_json_str)
+             tahun_sesi_ahli_parlimen_count = JSON.parse(clean_json_str);
+             mode = 'DN'
+             $('#parlimen_or_negeri_aktif_text').text('Negeri Aktif')
+             $('#ahli_or_ahlisenat_aktif_text').text('Ahli Senat')
+         }catch (e) {
+            console.warn('json_tahun_sesi_ahlisenat_parlimen_count is empty')
+         }
+     }
+
+     if (tahun_sesi_ahli_parlimen_count) {
+
+         console.log('tahun_sesi_ahli_parlimen_count', tahun_sesi_ahli_parlimen_count)
+
+         var ahli_parlimen_count_by_tahun_sesi = _.groupBy(tahun_sesi_ahli_parlimen_count, function (row) {
+             return row['tahun'] + '_' + row['sesi']
+         });
+
+
+
+
+         $("#past_tahun_sesi_select").change(function () {
+             var selected_tahun_sesi = $(this).val();
+             console.log('selected_tahun_sesi', selected_tahun_sesi)
+
+             var selected_jenis_count = jenis_count_by_tahun_sesi[selected_tahun_sesi]
+
+             var past_jumlah_soalan = _.sumBy(selected_jenis_count, function (o) { return Number(o['count']) })
+             console.log('past_jumlah_soalan', past_jumlah_soalan)
+
+
+             var selected_ahli_parlimen_count = ahli_parlimen_count_by_tahun_sesi[selected_tahun_sesi]
+
+             console.log('selected_ahli_parlimen_count', selected_ahli_parlimen_count)
+
+             var max_ahli_parlimen_count_value  = 0
+             if (selected_ahli_parlimen_count) {
+
+              max_ahli_parlimen_count_value = _.maxBy(selected_ahli_parlimen_count, 'count')['count'];
+             }
+
+
+             console.log('max_ahli_parlimen_count_value', max_ahli_parlimen_count_value)
+             var max_selected_ahli_parlimen_count = _.filter(selected_ahli_parlimen_count, { 'count': max_ahli_parlimen_count_value })
+
+             console.log('max_selected_ahli_parlimen_count', max_selected_ahli_parlimen_count)
+
+             var max_selected_parlimen_array = [];
+             var max_selected_ahli_array = [];
+             // var max_selected_ahli_id_dn_array = [];
+             // var max_selected_ahli_id_dr_array = [];
+             var max_selected_ahli_id_array = [];
+             var link_to_redirect = "";
+
+             var ahli_id_link = [];
+
+             if (mode == 'DR') {
+
+                max_selected_parlimen_array = _.map(max_selected_ahli_parlimen_count, 'parlimenname')
+                max_selected_ahli_array = _.map(max_selected_ahli_parlimen_count, 'ahliname')
+                max_selected_ahli_id_array = _.map(max_selected_ahli_parlimen_count, 'id_ahli')
+                link_to_redirect = "http://pintarparlimen.mcmc.gov.my/dr_soalanYB.aspx?id="
+             }
+             if (mode == 'DN') {
+
+                max_selected_parlimen_array = _.map(max_selected_ahli_parlimen_count, 'negeriname')
+                max_selected_ahli_array = _.map(max_selected_ahli_parlimen_count, 'ahlisenatname')
+                max_selected_ahli_id_array = _.map(max_selected_ahli_parlimen_count, 'id_ahli')
+                link_to_redirect = "http://pintarparlimen.mcmc.gov.my/dn_soalanYB.aspx?id="
+             }
+
+             console.log('max_selected_parlimen_array', max_selected_parlimen_array)
+
+             console.log('max_selected_ahli_array', max_selected_ahli_array)
+
+             // console.log('max_selected_ahli_id_dr_array', max_selected_ahli_id_dr_array)
+             //
+             // console.log('max_selected_ahli_id_dn_array', max_selected_ahli_id_dn_array)
+
+             console.log('max_selected_ahli_id_array', max_selected_ahli_id_array)
+
+             // Luke 18/5/2020
+
+             // var percentage_change = (past_jumlah_soalan - second_latest_jumlah_soalan)/second_latest_jumlah_soalan * 100
+             //
+             // if (percentage_change < 0) {
+             //     $('#main_jumlah_soalan_percentage_change_positive').detach()
+             //     $('#main_jumlah_soalan_percentage_change_positive_sentence').detach();
+             //     $('#main_jumlah_soalan_percentage_change_negative_sentence').text('Penurunan jumlah soalan berbanding sesi sebelumnya');
+             // } else {
+             //     $('#main_jumlah_soalan_percentage_change_negative').detach();
+             //     $('#main_jumlah_soalan_percentage_change_negative_sentence').detach();
+             //     $('#main_jumlah_soalan_percentage_change_positive_sentence').text('Kenaikan jumlah soalan berbanding sesi sebelumnya');
+             // }
+             //
+             // $('#main_jumlah_soalan_percentage_change').text(percentage_change.toFixed(2) + '%');
+
+             // END Luke 18/5/2020
+
+             // Luke 5/5/2020
+
+             for (var key in max_selected_ahli_id_array) {
+                 if (max_selected_ahli_id_array.hasOwnProperty(key)) {
+                     // ahli_id_link = link_to_redirect + max_selected_ahli_id_array[key];
+                     ahli_id_link.push(link_to_redirect + max_selected_ahli_id_array[key] );
+                     console.log('max_selected_ahli_id_array_link', link_to_redirect + max_selected_ahli_id_array[key]);
+                 }
+             }
+
+            // for (var key in max_selected_ahli_id_dr_array) {
+            //     if (max_selected_ahli_id_dr_array.hasOwnProperty(key)) {
+            //         console.log('max_selected_ahli_id_dr_array', "http://pintarparlimen.mcmc.gov.my/dr_soalanLisan.aspx?id=" + max_selected_ahli_id_dr_array[key]);
+            //     }
+            // }
+            //
+            // for (var key in max_selected_ahli_id_dn_array) {
+            //     if (max_selected_ahli_id_dn_array.hasOwnProperty(key)) {
+            //         console.log('max_selected_ahli_id_dn_array', "http://pintarparlimen.mcmc.gov.my/dn_soalanLisan.aspx?id=" + max_selected_ahli_id_dn_array[key]);
+            //     }
+            // }
+
+             //end of Luke 5/5/2020
+
+
+             var selected_parti_count = parti_count_by_tahun_sesi[selected_tahun_sesi]
+             console.log('selected_parti_count', selected_parti_count)
+
+             var max_parti_count_value  = 0
+             if (selected_parti_count) {
+
+              max_parti_count_value = _.maxBy(selected_parti_count, 'count')['count'];
+             }
+             console.log('max_parti_count_value', max_parti_count_value)
+
+             var max_selected_parti_count = _.filter(selected_parti_count, { 'count': max_parti_count_value })
+             console.log('max_selected_parti_count', max_selected_parti_count)
+
+             var max_selected_parti_array = _.map(max_selected_parti_count, 'partiname')
+             console.log('max_selected_parti_array', max_selected_parti_array)
+             $('#past_parti_aktif').html(max_selected_parti_array.join('<br/>'));
+
+
+             $('#past_jumlah_soalan').text(past_jumlah_soalan);
+             $('#past_jumlah_soalan_lisan').text(_.find(selected_jenis_count, { 'jenis': 'Lisan' })['count']);
+             $('#past_jumlah_soalan_bukan_lisan').text(_.find(selected_jenis_count, { 'jenis': 'Bukan Lisan' })['count']);
+             $('#past_jumlah_soalan_mqt').text((_.find(selected_jenis_count, { 'jenis': 'MQT' }) || {})['count']);
+             $('#past_jumlah_soalan_ukk').text((_.find(selected_jenis_count, { 'jenis': 'Usul Kamar Khas' }) || {})['count']);
+
+             $('#past_bil_soalan').text(max_ahli_parlimen_count_value);
+             $('#past_bil_parlimen').text(max_selected_parlimen_array.length);
+
+             // $('#past_parliment_link').html(ahli_id_link.join('<br/>'))
+             // $('#past_parliment_link').attr("href", ahli_id_link);
+
+             // luke 7/5/2020
+
+              var new_parlimen = [];
+              max_selected_parlimen_array.forEach(parlimentDiv);
+              $('#past_parlimen_aktif').html(new_parlimen);
+
+              ahli_id_link.forEach(parlimentLink);
+
+              function parlimentDiv(value, index, array) {
+                var element = $('<div><a id="parliment'+index+'">'+value+'</a></div>');
+                new_parlimen.push(element);
+              }
+
+              function parlimentLink(value, index, array) {
+                var element = "#parliment"+index;
+                console.log('element', element)
+                console.log('new_parlimen', value)
+
+                $(element).attr("href", value);
+              }
+
+              // $('past_parlimen_aktif').append(new_parlimen);
+              // $('#past_parlimen_aktif').html(new_parlimen);
+
+             // end luke 7/5/2020
+
+             // $('#past_parlimen_aktif').html(max_selected_parlimen_array.join('<br/>'));
+             $('#past_ahli_aktif').html(max_selected_ahli_array.join('</span>'));
+             // $('#past_parlimen_aktif').attr("href", ahli_id_link.join('<br/>'));
+
+
+
+
+         });
+
+         $("#past_tahun_sesi_select").val(second_latest_tahun_sesi).trigger('change');
+     }
+
+     //////
+
+     var tahun_sesi_isu_count = JSON.parse("<%=json_tahun_sesi_isu_count %>");
+
+     console.log('tahun_sesi_isu_count', tahun_sesi_isu_count)
+
+
+
+
+    Chart.defaults.global.defaultFontColor = '#8495a7';
+    var option = {
+        responsive: true,
+        title: {
+            display: false,
+            text: 'Trajektori Isu'
+        },
+        aspectRatio: 4,
+        legend: {
+            display: false,
+            position: 'right',
+            // labels: {
+            //     filter: function(item, chart) {
+            //         // Logic to remove a particular legend item goes here
+            //         return !item.text.includes('proj');
+            //     }
+            // }
+        },
+        barValueSpacing: 20,
+        responsive: true,
+        scales: {
+        xAxes: [{
+            gridLines: {
+                display:false
+            },
+            ticks: {
+                suggestedMax: 15
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                display:false
+            },
+            ticks: {
+                suggestedMax: 15
+            }
+        }]
+    },
+        layout: {
+            padding: {
+                left: 20,
+                right: 20,
+                top: 0,
+                bottom: 20
+            }
+        }
+     };
+
+
+     var dataset_styles = [
+        {
+            borderColor: "blue",
+            backgroundColor: "blue",
+        },
+        {
+            borderColor: "red",
+            backgroundColor: "red",
+        },
+        {
+            borderColor: "brown",
+            backgroundColor: "brown",
+        },
+        {
+            borderColor: "orange",
+            backgroundColor: "orange",
+        },
+        {
+            borderColor: "black",
+            backgroundColor: "black",
+        },
+        {
+            borderColor: "maroon",
+            backgroundColor: "maroon",
+        },
+        {
+            borderColor: "green",
+            backgroundColor: "green",
+        },
+        {
+            borderColor: "purple",
+            backgroundColor: "purple",
+         },
+        {
+            borderColor: "green",
+            backgroundColor: "green",
+        },
+        {
+            borderColor: "purple",
+            backgroundColor: "purple",
+         },
+     ]
+
+     var data = {
+        labels: ["Sesi 3 2018", "Sesi 1 2019", "Sesi 2 2019", "Sesi 3 2019", "Sesi 1 2020"],
+        datasets: [
+        {
+            label: "Kandungan Penyiaran",
+            borderColor: "blue",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [2, 0, 0, 2, ]
+        },
+        {
+            label: "Khas 5G",
+            borderColor: "red",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [2, 10, 0, 2, ]
+        },
+        {
+            label: "Khas NFCP",
+            borderColor: "brown",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [0, 0, 0, 0, ]
+        },
+        {
+            label: "Penipuan Atas Talian",
+            borderColor: "orange",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [0, 0, 1, 0, ]
+        },
+        {
+            label: "Perkhidmatan Internet",
+            borderColor: "black",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [15, 10, 14, 13, ]
+        },
+        {
+            label: "Perkhidmatan Komunikasi",
+            borderColor: "maroon",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [11, 5, 8, 7, ]
+        },
+        {
+            label: "Pos Dan Lain-Lain",
+            borderColor: "green",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [1, 0, 2, 2, ]
+        },
+        {
+            label: "Salah Guna Media Sosial",
+            borderColor: "purple",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [7, 8, 13, 16, ]
+        },
+
+
+
+        {
+            label: 'Kandungan Penyiaran proj',
+            borderColor: "blue",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 2, 1]
+        },
+        {
+            label: "Khas 5G proj",
+            borderColor: "red",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 2, 12]
+        },
+        {
+            label: "Khas NFCP proj",
+            borderColor: "brown",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 0, 0.5]
+        },
+        {
+            label: "Penipuan Atas Talian proj",
+            borderColor: "orange",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 0, 1]
+        },
+        {
+            label: "Perkhidmatan Internet proj",
+            borderColor: "black",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 13, 13]
+        },
+        {
+            label: "Perkhidmatan Komunikasi proj",
+            borderColor: "maroon",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 7, 6]
+        },
+        {
+            label: "Pos Dan Lain-Lain proj",
+            borderColor: "green",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 2, 2]
+        },
+        {
+            label: "Salah Guna Media Sosial proj",
+            borderColor: "purple",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            borderDash: [10, 10],
+            data: [, , , 16, 19]
+        },
+         ]
+    };
+
+     data.labels = _.map([].concat(tahun_sesi).reverse(), function (tahun_sesi) {
+         return 'Sesi ' + tahun_sesi['sesi'] + ' ' + tahun_sesi['tahun']
+     })
+
+     data.labels.push('next')
+
+     data.datasets = [];
+
+
+    var tahun_sesi_count_by_isu = _.groupBy(tahun_sesi_isu_count, function (row) {
+        return row['isuname']
+     });
+
+    console.log('tahun_sesi_count_by_isu', tahun_sesi_count_by_isu);
+
+     //ref: https://medium.com/@sahirnambiar/linear-least-squares-a-javascript-implementation-and-a-definitional-question-e3fba55a6d4b#:~:text=Linear%20Least%20Squares%3A%20A%20Javascript%20Implementation%20and%20a%20Definitional%20Question,-tiefengeist&text=Least%20squares%20fitting%20finds%20the,each%20point%20from%20the%20curve.
+     function findLineByLeastSquares(values_x, values_y) {
+        var x_sum = 0;
+        var y_sum = 0;
+        var xy_sum = 0;
+        var xx_sum = 0;
+        var count = 0;
+
+        /*
+         * The above is just for quick access, makes the program faster
+         */
+        var x = 0;
+        var y = 0;
+        var values_length = values_x.length;
+
+        if (values_length != values_y.length) {
+            throw new Error('The parameters values_x and values_y need to have same size!');
+        }
+
+        /*
+         * Above and below cover edge cases
+         */
+        if (values_length === 0) {
+            return [ [], [] ];
+        }
+
+        /*
+         * Calculate the sum for each of the parts necessary.
+         */
+        for (let i = 0; i< values_length; i++) {
+            x = values_x[i];
+            y = values_y[i];
+            x_sum+= x;
+            y_sum+= y;
+            xx_sum += x*x;
+            xy_sum += x*y;
+            count++;
+        }
+
+        /*
+         * Calculate m and b for the line equation:
+         * y = x * m + b
+         */
+        var m = (count*xy_sum - x_sum*y_sum) / (count*xx_sum - x_sum*x_sum);
+        var b = (y_sum/count) - (m*x_sum)/count;
+
+        /*
+         * We then return the x and y data points according to our fit
+         */
+        var result_values_x = [];
+        var result_values_y = [];
+
+        for (let i = 0; i < values_length; i++) {
+            x = values_x[i];
+            y = x * m + b;
+            result_values_x.push(x);
+            result_values_y.push(y);
+        }
+
+        //return [m, b, result_values_x, result_values_y];
+         return { m, b, result_values_x, result_values_y };
+     }
+
+
+     var dataset_count = 0
+     for (const isu in tahun_sesi_count_by_isu) {
+        var tahun_sesi_count = tahun_sesi_count_by_isu[isu]
+
+        var dataset =
+        {
+            label: "Kandungan Penyiaran",
+            borderColor: "blue",
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            pointBackgroundColor: "transparent",
+            data: [2, 0, 0, 2,]
+        };
+
+        dataset = Object.assign(dataset, dataset_styles[dataset_count])
+        dataset.backgroundColor = 'rgba(0, 0, 0, 0)'
+        dataset.lineTension = 0; //straight line
+        dataset.label = isu
+        dataset.data = _.map([].concat(tahun_sesi_count).reverse(), 'count')
+
+
+        data.datasets.push(dataset)
+
+        var is_compute_projection = true
+        //TODO: projection
+         if (is_compute_projection) {
+
+            var dataset =
+            {
+                label: "Kandungan Penyiaran",
+                borderColor: "blue",
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+                pointBackgroundColor: "transparent",
+                data: [2, 0, 0, 2,]
+            };
+
+            dataset = Object.assign(dataset, dataset_styles[dataset_count])
+            dataset.backgroundColor = 'rgba(0, 0, 0, 0)'
+            dataset.pointBackgroundColor= "transparent"
+            dataset.borderDash = [10, 10]
+            dataset.lineTension = 0; //straight line
+            dataset.label = isu + ' proj'
+            dataset.data = []
+
+
+            for (var x_count = 0; x_count < tahun_sesi_count.length-1; x_count++) {
+            dataset.data.push(null)
+            }
+
+            var last_count = Number((([].concat(tahun_sesi_count).reverse())[tahun_sesi_count.length - 1])['count'])
+
+            console.log('last_count', last_count, isu)
+
+            console.log(last_count)
+            dataset.data.push(last_count)
+
+            var values_x = [];
+
+            var count = 0
+            tahun_sesi_count.forEach(function () {
+                values_x.push(count++)
+             })
+
+            var values_y = _.map([].concat(tahun_sesi_count).reverse(), function (o) { return Number(o['count']) });
+
+            console.log('values_x', values_x, 'values_y', values_y, isu)
+            ///
+
+             var result = findLineByLeastSquares(values_x, values_y)
+             var slope =  result.m
+             var next_x = tahun_sesi_count.length
+
+             //var intercept = last_count
+             //var intercept = 0
+             var intercept = result.b
+
+             var next_y = next_x * slope + intercept;
+            console.log("next_x", next_x, "slope", slope, "intercept", intercept, "next_y", next_y, isu)
+
+            var projected_value = 9
+
+            dataset.data.push(next_y)
+
+             ///
+
+            data.datasets.push(dataset)
+         }
+
+
+        dataset_count++
+        //findLineByLeastSquares()
+
+     }
+
+
+    var ctx = document.getElementById('line');
+    // var ctx = document.getElementById("myChart").getContext("2d");
+
+    var myLine = new Chart(ctx, {
+        type: 'line',
+        type: 'line',
+        data: data,
+        options: option,
+    });
+
+     //////
+
+
+      Chart.defaults.global.defaultFontColor = '#8495a7';
+      var option = {
+          aspectRatio: 4,
+          legend: {
+              display: false,
+              position: 'right'
+          },
+          barValueSpacing: 20,
+          responsive: true,
+          scales: {
+              yAxes: [{
+                  stacked: true,
+                  gridLines: {
+                      display: true,
+                      // color: "rgba(255,99,132,0.2)"
+                  },
+                  ticks: {
+                      beginAtZero: true,
+                      min: 0,
+                      stepSize: 1,
+                      suggestedMax: 5
+                  }
+              }],
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true,
+                      min: 0,
+                      stepSize: 1,
+                      suggestedMax: 5
+                  }
+              }]
+          },
+          layout: {
+              padding: {
+                  left: 20,
+                  right: 20,
+                  top: 20,
+                  bottom: 20
+              }
+          }
+     };
+
+      var ctx = document.getElementById('graph2');
+      // var ctx = document.getElementById("myChart").getContext("2d");
+
+      var myChart2 = new Chart(ctx, {
+          type: 'bar',
+          options: option,
+      });
+
+
+
+     //var selected_negeri = null
+     //var selected_parti = null
+
+     var selected_negeri = 'JOHOR'
+     var selected_parti = 'DAP'
+
+     var tahun_sesi_negeri_parti_isu_count = JSON.parse("<%=json_tahun_sesi_negeri_parti_isu_count %>");
+     // var tahun_sesi_negeri_parti_isu_count = JSON.parse("<%=json_tahun_sesi_negeri_parti_isu_count_question%>");
+     console.log('tahun_sesi_negeri_parti_isu_count', tahun_sesi_negeri_parti_isu_count)
+
+     function plotNegeriPartiGraph() {
+         tahun_sesi_isu_count_of_negeri_parti = _.filter(tahun_sesi_negeri_parti_isu_count, { "negeriname": selected_negeri, "partiname": selected_parti })
+         console.log('tahun_sesi_isu_count_of_negeri_parti', tahun_sesi_isu_count_of_negeri_parti)
+
+
+          var data = {
+              // labels: ["Sesi 3 2019", "Sesi 2 2019", "Sesi 1 2019", "Sesi 3 2018", "Grand Total"],
+              labels: [],
+              datasets: [{
+                  label: "Kandungan Penyiaran",
+                  backgroundColor: "blue",
+                  data: [3, 0, 1, 3, 7]
+              },
+              {
+                  label: "Khas 5G",
+                  backgroundColor: "red",
+                  data: [2, 10, 0, 2, 12]
+              },
+              {
+                  label: "Khas NFCP",
+                  backgroundColor: "brown",
+                  data: [4, 1, 0, 0, 5]
+              },
+              {
+                  label: "Penipuan Atas Talian",
+                  backgroundColor: "orange",
+                  data: [0, 2, 1, 0, 3]
+              },
+              {
+                  label: "Perkhidmatan Internet",
+                  backgroundColor: "black",
+                  data: [8, 14, 10, 15, 47]
+              },
+              {
+                  label: "Perkhidmatan Komunikasi",
+                  backgroundColor: "grey",
+                  data: [9, 8, 5, 11, 33]
+              },
+              {
+                  label: "Pos Dan Lain-Lain",
+                  backgroundColor: "green",
+                  data: [1, 3, 1, 2, 7]
+              },
+              {
+                  label: "Salah Guna Media Sosial",
+                  backgroundColor: "purple",
+                  data: [15, 13, 8, 7, 43]
+              },
+              {
+                  label: "Ketirisan Data",
+                  backgroundColor: "yellow",
+                  data: [2, 0, 0, 0, 2]
+              }]
+          };
+
+
+         data.labels = _.map([].concat(tahun_sesi).reverse(), function (tahun_sesi) {
+             console.log('tahun_sesi_count_of_negeri_parti_isu_tahun', 'Sesi ' + tahun_sesi['sesi'] + ' ' + tahun_sesi['tahun'])
+             return 'Sesi ' + tahun_sesi['sesi'] + ' ' + tahun_sesi['tahun']
+         })
+         // data.labels.push('Grand Total')
+         data.datasets = []
+
+        var dataset_count = 0
+        isu_array.forEach(function(isu) {
+
+            var isuname = isu['isuname']
+
+
+            var dataset =
+                  {
+                      label: "Ketirisan Data",
+                      backgroundColor: "yellow",
+                      data: [2, 0, 0, 0, 2]
+                  }
+
+            dataset = Object.assign(dataset, dataset_styles[dataset_count++])
+            dataset.label = isuname
+
+            dataset.data = []
+            var reversed_tahun_sesi = [].concat(tahun_sesi).reverse()
+            reversed_tahun_sesi.forEach(function (tahun_sesi_item) {
+                var count = 0;
+                 var tahun_sesi_count =  _.find(tahun_sesi_isu_count_of_negeri_parti, {"tahun": tahun_sesi_item['tahun'], "sesi": tahun_sesi_item['sesi'], "isuname": isuname})
+
+
+                if (tahun_sesi_count) {
+                    count = tahun_sesi_count['count']
+                    }
+
+                dataset.data.push(count)
+            })
+
+
+
+             /// Grand Total for issue
+
+            var tahun_sesi_count_of_negeri_parti_isu = _.filter(tahun_sesi_isu_count_of_negeri_parti, { "isuname": isuname })
+            console.log('tahun_sesi_count_of_negeri_parti_isu', tahun_sesi_count_of_negeri_parti_isu, isuname)
+
+            var grand_total_of_isu = _.sumBy(tahun_sesi_count_of_negeri_parti_isu, function (o) { return Number(o['count']) });
+            console.log('grand_total_of_isu', grand_total_of_isu, isuname)
+
+             dataset.data.push(grand_total_of_isu);
+
+
+             ///
+
+            data.datasets.push(dataset)
+         })
+
+
+
+         console.log('data', data)
+         myChart2.config.data = data;
+         myChart2.update();
+     }
+
+
+
+     var negeri_array = JSON.parse("<%=json_negeri %>");
+     console.log('negeri_array', negeri_array)
+
+     negeri_array.forEach(function (negeri) {
+         $('#negeri_select').append(`<option> ${negeri['negeriname']}</option>`);
+     })
+
+     $("#negeri_select").change(function () {
+         selected_negeri =  $(this).val();
+         console.log('selected_negeri', selected_negeri)
+         plotNegeriPartiGraph();
+     })
+
+     var parti_array = JSON.parse("<%=json_parti %>");
+     console.log('parti_array', parti_array)
+     parti_array.forEach(function (parti) {
+         $('#parti_select').append(`<option> ${parti['partiname']}</option>`);
+     })
+
+     $("#parti_select").change(function () {
+         selected_parti =  $(this).val();
+         console.log('selected_parti', selected_parti)
+         plotNegeriPartiGraph();
+     })
+
+     $("#negeri_select").val(selected_negeri).trigger('change');
+     $("#parti_select").val(selected_parti).trigger('change');
+
+     //////
+
+     var negeri_isu_count = JSON.parse("<%=json_negeri_isu_count %>");
+
+     console.log('negeri_isu_count', negeri_isu_count)
+
+     //$('#negeri_panel_row').empty()
+
+
+
+     negeri_array.forEach(function (negeri) {
+
+         var negeriname = negeri['negeriname']
+
+         //var flag_file_name = 'johor.png'
+         var flag_file_name = negeriname + '.png'
+         var canvas_id = negeriname + '_graph'
+
+         /*var negeriname_to_flag = {
+             "JOHOR": 'johor.png',
+             "KEDAH": 'kedah.png',
+             "KELANTAN": 'kelantan.png',
+             "MELAKA": 'melaka.png',
+             "NEGERI SEMBILAN": 'n9.png',
+             "PAHANG": 'pahang.png',
+             "PERAK": 'perak.png',
+             "PERLIS": 'perlis.png',
+             "PULAU PINANG": 'penang.png',
+             "SABAH": 'sabah.png',
+             "SARAWAK": 'sarawak.png',
+             "SELANGOR": 'selangor.png',
+             "TERENGGANU": 'terengganu.png',
+             "WP KUALA LUMPUR": 'kLumpur.png',
+             "WP PUTRAJAYA": 'putrajaya.png',
+             //"LABUAN": 'labuan.png',
+         }*/
+
+         $('#negeri_panel_row').append(`
+             <div class="col-xl-3 mb-5 mb-xl-3">
+                <div class="card bg-gradient-default shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-left">
+                            <div class="col">
+                              <table>
+                                <tr>
+                                  <td><img src="./assets/img/flag/${flag_file_name}" alt="" style="width:40px;height:20px;" border="3"></td>
+                                  <td><h4 class="text-black mb-0" style="font-size:13px">${negeriname}</h4></td>
+                                </tr>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <canvas id="${canvas_id}" style="background-color: #fefeff;" ></canvas>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         `)
+
+
+        Chart.defaults.global.defaultFontColor = '#8495a7';
+        var option = {
+            title: {
+                display: true,
+                text: 'Statistik Isu Mengikut Negeri'
+            },
+            aspectRatio: 4,
+            legend: {
+                display: true,
+                position: 'right'
+            },
+            barValueSpacing: 20,
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        color: "rgba(0, 0, 0, 0)"
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        stepSize: 1,
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 20,
+                    bottom: 20
+                }
+            }
+         };
+
+         function getRandomInt(max) {
+            //return Math.floor(Math.random() * Math.floor(max));
+            return 2;
+         }
+
+        var data = {
+            labels: [""],
+            datasets: [{
+                label: "Kandungan Penyiaran",
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Khas 5G",
+                backgroundColor: "red",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Khas NFCP",
+                backgroundColor: "brown",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Penipuan Atas Talian",
+                backgroundColor: "orange",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Perkhidmatan Internet",
+                backgroundColor: "black",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Perkhidmatan Komunikasi",
+                backgroundColor: "grey",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Pos Dan Lain-Lain",
+                backgroundColor: "green",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Salah Guna Media Sosial",
+                backgroundColor: "purple",
+                data: [getRandomInt(3)]
+            },
+            {
+                label: "Ketirisan Data",
+                backgroundColor: "yellow",
+                data: [getRandomInt(3)]
+            }]
+        };
+
+
+         data.datasets = [];
+
+         var dataset_count = 0
+        isu_array.forEach(function(isu) {
+
+            var isuname = isu['isuname']
+
+            var dataset =
+                  {
+                      label: "Ketirisan Data",
+                      backgroundColor: "yellow",
+                      data: [2, 0, 0, 0, 2]
+                  }
+
+            dataset = Object.assign(dataset, dataset_styles[dataset_count++])
+            dataset.label = isuname
+
+            dataset.data = []
+
+            var negeri_isu_count_item = _.find(negeri_isu_count, { "negeriname": negeriname, "isuname": isuname })
+
+            if (negeri_isu_count_item) {
+                dataset.data.push(negeri_isu_count_item['count'])
+            }
+
+
+            data.datasets.push(dataset)
+         })
+
+        var ctx = document.getElementById(canvas_id);
+        // var ctx = document.getElementById("myChart").getContext("2d");
+
+        var myChart2 = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+              legend: {display: false, position: 'right'},
+              scales: {
+                  yAxes: [{
+                      stacked: true,
+                      gridLines: {
+                          display: true,
+                          color: "rgba(0, 0, 0, 0)"
+                      },
+                      ticks: {
+                          beginAtZero: true,
+                          min: 0,
+                          stepSize: 1,
+                          suggestedMax: 5
+                      }
+                  }],
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true,
+                          min: 0,
+                          stepSize: 1,
+                          suggestedMax: 5
+                      }
+                  }]
+              },
+            },
+        });
+
+     })
+
+});
+</script>
+</body>
+
+</html>
